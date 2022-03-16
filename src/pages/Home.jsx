@@ -1,15 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Typography from "@mui/material/Typography";
 
 const Home = () => {
   return (
     <>
-      <h2>Welcome to Torre.co</h2>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/People">People</Link>
-        <Link to="/Jobs">Jobs</Link>
-      </nav>
+      <main>
+        <Typography
+          sx={{ margin: "2%", textAlign: "center" }}
+          variant="h3"
+          component="h2"
+        >
+          Welcome to Torre.co
+        </Typography>
+      </main>
     </>
   );
 };

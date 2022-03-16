@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Typography from "@mui/material/Typography";
 
 const user = () => {
   let { id } = useParams();
@@ -27,7 +28,13 @@ const user = () => {
   }, [data]);
   return (
     <main>
-      <h2>Find jobs at Torre</h2>
+      <Typography
+        sx={{ margin: "2%", textAlign: "center" }}
+        variant="h3"
+        component="h2"
+      >
+        User
+      </Typography>
       {/* {result
         ? result.map((item) => {
             return (
