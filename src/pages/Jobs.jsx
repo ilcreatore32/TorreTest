@@ -7,6 +7,8 @@ import PublicIcon from "@mui/icons-material/Public";
 import PublicOffIcon from "@mui/icons-material/PublicOff";
 
 import Paper from "@mui/material/Paper";
+import Box from "@mui/material/Box";
+import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 
 import { styled } from "@mui/material/styles";
@@ -61,28 +63,74 @@ const Jobs = () => {
           ? result.map((item) => {
               return (
                 <>
-                  <TorrePaper key={item.id} elevation={3}>
-                    <h3>{item.organizations[0].name}</h3>
-                    <p>{item.objective}</p>
-                    <p>{item.tagline}</p>
-                    {item.remote ? (
-                      <p>
-                        <PublicIcon />
-                        Trabajo remoto
-                      </p>
-                    ) : (
-                      <p>
-                        <PublicOffIcon />
-                        Trabajo no remoto
-                      </p>
-                    )}
-                    <TorreButton
-                      component={Link}
-                      to={`Jobs/${item.id}`}
-                      variant="outlined"
-                    >
-                      Ver Detalles
-                    </TorreButton>
+                  <TorrePaper
+                    key={item.id}
+                    elevation={3}
+                    sx={{ display: "flex", gap: 3 }}
+                  >
+                    <Box>
+                      <Avatar
+                        alt={item.username}
+                        src={item.organizations[0].picture}
+                        sx={{ width: 100, height: 100 }}
+                      />
+                    </Box>
+                    <Box sx={{ width: "100%" }}>
+                      <Typography
+                        variant="subtitle1"
+                        component="h2"
+                        sx={{ color: "#cddc39" }}
+                      >
+                        {item.organizations[0].name}
+                      </Typography>
+                      <Typography variant="body2" component="h2">
+                        {item.objective}
+                      </Typography>
+                      <Typography variant="body2" component="h2">
+                        {item.tagline}
+                      </Typography>
+
+                      <Box
+                        sx={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                          alignItems: "center",
+                          marginTop: "10px",
+                        }}
+                      >
+                        {item.remote ? (
+                          <Box
+                            sx={{
+                              display: "flex",
+                              gap: 1,
+                              alignItems: "center",
+                            }}
+                          >
+                            <PublicIcon />
+                            Trabajo remoto
+                          </Box>
+                        ) : (
+                          <Box
+                            sx={{
+                              display: "flex",
+                              gap: 1,
+                              alignItems: "center",
+                            }}
+                          >
+                            <PublicOffIcon />
+                            Trabajo no remoto
+                          </Box>
+                        )}
+                        <TorreButton
+                          component={Link}
+                          to={`Jobs/${item.id}`}
+                          sx={{ backgroundColor: "#cddc39", color: "#383b40" }}
+                          variant="outlined"
+                        >
+                          Ver Detalles
+                        </TorreButton>
+                      </Box>
+                    </Box>
                   </TorrePaper>
                 </>
               );

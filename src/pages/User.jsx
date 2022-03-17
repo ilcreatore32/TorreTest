@@ -10,7 +10,8 @@ const user = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const torre = await axios(`/bio/${id}`)
+      const torre = await axios
+        .get(`https://torre.bio/api/bios/${id}`)
         .then((result) => {
           return result.data;
         })
