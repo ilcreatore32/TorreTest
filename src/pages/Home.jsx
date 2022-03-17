@@ -74,7 +74,7 @@ const Home = () => {
             <CardActions>
               <TorreButton
                 component={Link}
-                to="/People"
+                to="/TorreTest/People"
                 variant="outlined"
                 size="small"
               >
@@ -104,7 +104,7 @@ const Home = () => {
             <CardActions>
               <TorreButton
                 component={Link}
-                to="Jobs"
+                to="/TorreTest/Jobs"
                 variant="outlined"
                 size="small"
               >

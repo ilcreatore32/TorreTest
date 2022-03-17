@@ -18,28 +18,19 @@ import Home from "./pages/Home";
 import People from "./pages/People";
 import User from "./pages/User";
 import Jobs from "./pages/Jobs";
-
-const pages = ["Products", "Pricing", "Blog"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+import Job from "./pages/Job";
 
 function App() {
   const [anchorElNav, setAnchorElNav] = useState(null);
-  const [anchorElUser, setAnchorElUser] = useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
   };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
   return (
     <div className="App">
       <Box sx={{ flexGrow: 1 }}>
@@ -89,13 +80,13 @@ function App() {
                     display: { xs: "block", md: "none" },
                   }}
                 >
-                  <MenuItem component={Link} to="/">
+                  <MenuItem component={Link} to="/TorreTest/">
                     <Typography textAlign="center">Home</Typography>
                   </MenuItem>
-                  <MenuItem component={Link} to="/People">
+                  <MenuItem component={Link} to="/TorreTest/People">
                     <Typography textAlign="center">People</Typography>
                   </MenuItem>
-                  <MenuItem component={Link} to="/Jobs">
+                  <MenuItem component={Link} to="/TorreTest/Jobs">
                     <Typography textAlign="center">Jobs</Typography>
                   </MenuItem>
                 </Menu>
@@ -111,21 +102,21 @@ function App() {
               <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
                 <Button
                   component={Link}
-                  to="/"
+                  to="/TorreTest/"
                   sx={{ my: 2, color: "white", display: "block" }}
                 >
                   Home
                 </Button>
                 <Button
                   component={Link}
-                  to="/People"
+                  to="/TorreTest/People"
                   sx={{ my: 2, color: "white", display: "block" }}
                 >
                   People
                 </Button>
                 <Button
                   component={Link}
-                  to="/Jobs"
+                  to="/TorreTest/Jobs"
                   sx={{ my: 2, color: "white", display: "block" }}
                 >
                   Jobs
@@ -133,7 +124,7 @@ function App() {
               </Box>
               <Button
                 component={Link}
-                to="/"
+                to="/TorreTest/"
                 sx={{ my: 2, color: "#cddc39", display: "block" }}
               >
                 Sing in
@@ -143,10 +134,11 @@ function App() {
         </AppBar>
       </Box>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/People" element={<People />} />
-        <Route path="/User/:id" element={<User />} />
-        <Route path="/Jobs" element={<Jobs />} />
+        <Route path="/TorreTest/" element={<Home />} />
+        <Route path="/TorreTest/People" element={<People />} />
+        <Route path="/TorreTest/User/:id" element={<User />} />
+        <Route path="/TorreTest/Jobs" element={<Jobs />} />
+        <Route path="/TorreTest/Jobs/:id" element={<Job />} />
       </Routes>
     </div>
   );

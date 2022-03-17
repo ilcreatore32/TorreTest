@@ -123,7 +123,7 @@ const Jobs = () => {
                         )}
                         <TorreButton
                           component={Link}
-                          to={`Jobs/${item.id}`}
+                          to={`/TorreTest/Jobs/${item.id}`}
                           sx={{ backgroundColor: "#cddc39", color: "#383b40" }}
                           variant="outlined"
                         >

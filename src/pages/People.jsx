@@ -84,7 +84,7 @@ const People = () => {
                         sx={{ width: 100, height: 100 }}
                       />
                     </Box>
-                    <Box sx={{width: "100%"}}>
+                    <Box sx={{ width: "100%" }}>
                       <Typography
                         variant="subtitle1"
                         component="h2"
@@ -107,7 +107,7 @@ const People = () => {
                         <TorreButton variant="outlined">Mensaje</TorreButton>
                         <TorreButton
                           component={Link}
-                          to={`User/${item.username}`}
+                          to={`/TorreTest/User/${item.username}`}
                           variant="contained"
                           sx={{ backgroundColor: "#cddc39", color: "#383b40" }}
                         >

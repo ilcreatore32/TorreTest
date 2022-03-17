@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Typography from "@mui/material/Typography";
 
-const User = () => {
+const Job = () => {
   let { id } = useParams();
   const [data, setData] = useState(null);
   const [result, setResult] = useState(null);
@@ -11,7 +11,7 @@ const User = () => {
   useEffect(() => {
     const fetchData = async () => {
       const torre = await axios
-        .get(`https://torre.bio/api/bios/${id}`)
+        .get(`https://torre.co/api/suite/opportunities/${id}`)
         .then((result) => {
           return result.data;
         })
@@ -34,7 +34,7 @@ const User = () => {
         variant="h3"
         component="h2"
       >
-        User
+        Job
       </Typography>
       {/* {result
         ? result.map((item) => {
@@ -54,4 +54,4 @@ const User = () => {
   );
 };
 
-export default User;
+export default Job;
